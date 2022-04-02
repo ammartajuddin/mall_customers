@@ -25,7 +25,7 @@ warnings.filterwarnings('ignore')
 # In[2]:
 
 
-df = pd.read_csv('../input/mailcustomers/Mall_Customers.csv')
+df = pd.read_csv('../Mall_Customers.csv')
 df.shape
 
 
@@ -34,13 +34,13 @@ df.shape
 # In[3]:
 
 
-df.head()
+st.head()
 
 
 # In[4]:
 
 
-df.columns
+st.columns
 
 
 # **Lets aggregate values based on Gender**

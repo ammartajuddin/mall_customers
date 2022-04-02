@@ -10,8 +10,9 @@
 import streamlit as st 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import seaborn as sns
+from matplotlib import pyplot as plt
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 

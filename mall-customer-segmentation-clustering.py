@@ -25,8 +25,8 @@ warnings.filterwarnings('ignore')
 # In[2]:
 
 
-df = pd.read_csv('../Mall_Customers.csv')
-df.shape
+st = pd.read_csv('../Mall_Customers.csv')
+st.shape
 
 
 # **How our data looks...**
@@ -48,7 +48,7 @@ st.columns
 # In[5]:
 
 
-df.groupby('Genre')['Age','Annual Income (k$)','Spending Score (1-100)'].mean()
+st.groupby('Genre')['Age','Annual Income (k$)','Spending Score (1-100)'].mean()
 
 
 # *Average Spending Score of Females is more than Males.*
@@ -58,7 +58,7 @@ df.groupby('Genre')['Age','Annual Income (k$)','Spending Score (1-100)'].mean()
 # In[6]:
 
 
-df.Genre = df.Genre.map({'Female':1,'Male':2})
+st.Genre = st.Genre.map({'Female':1,'Male':2})
 
 
 # ### Building Clustering model
@@ -75,9 +75,9 @@ from mpl_toolkits.mplot3d import Axes3D
 fig = plt.figure(figsize=(10,10))
 ax = fig.add_subplot(111, projection = '3d')
 
-x = df['Age']
-y = df['Annual Income (k$)']
-z = df['Spending Score (1-100)']
+x = st['Age']
+y = st['Annual Income (k$)']
+z = st['Spending Score (1-100)']
 
 ax.set_xlabel("Happiness")
 ax.set_ylabel("Economy")
@@ -97,7 +97,7 @@ from sklearn.cluster import KMeans
 # In[10]:
 
 
-X = df.drop(['CustomerID','Genre'],axis=1)
+X = st.drop(['CustomerID','Genre'],axis=1)
 
 
 # In[11]:
@@ -123,9 +123,9 @@ print(center_1)
 fig = plt.figure(figsize=(10,10))
 ax = fig.add_subplot(111, projection = '3d')
 
-x = df['Age']
-y = df['Annual Income (k$)']
-z = df['Spending Score (1-100)']
+x = st['Age']
+y = st['Annual Income (k$)']
+z = st['Spending Score (1-100)']
 
 ax.set_xlabel("Happiness")
 ax.set_ylabel("Economy")
@@ -154,9 +154,9 @@ print(center_2)
 fig = plt.figure(figsize=(10,10))
 ax = fig.add_subplot(111, projection = '3d')
 
-x = df['Age']
-y = df['Annual Income (k$)']
-z = df['Spending Score (1-100)']
+x = st['Age']
+y = st['Annual Income (k$)']
+z = st['Spending Score (1-100)']
 
 ax.set_xlabel("Happiness")
 ax.set_ylabel("Economy")
@@ -201,9 +201,9 @@ print(center_3)
 fig = plt.figure(figsize=(10,10))
 ax = fig.add_subplot(111, projection = '3d')
 
-x = df['Age']
-y = df['Annual Income (k$)']
-z = df['Spending Score (1-100)']
+x = st['Age']
+y = st['Annual Income (k$)']
+z = st['Spending Score (1-100)']
 
 ax.set_xlabel("Happiness")
 ax.set_ylabel("Economy")
@@ -224,13 +224,13 @@ kmeans.labels_
 # In[20]:
 
 
-df['Customer Segment'] = kmeans.labels_
+st['Customer Segment'] = kmeans.labels_
 
 
 # In[21]:
 
 
-df.sample(10)
+st.sample(10)
 
 
 # # Thank You 

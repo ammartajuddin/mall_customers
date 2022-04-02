@@ -25,7 +25,7 @@ warnings.filterwarnings('ignore')
 # In[2]:
 
 
-st = pd.read_csv('../Mall_Customers.csv')
+st = pd.read_csv('../input/mailcustomers/Mall_Customers.csv')
 st.shape
 
 
